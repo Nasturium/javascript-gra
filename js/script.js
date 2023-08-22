@@ -1,5 +1,19 @@
-function getMoveName(argMoveId){
-if(argMoveId == 1){
+ 
+  function buttonClicked(getMoveName){}
+  
+    let kamień = document.getElementById('kamień');
+  let papier = document.getElementById('papier');
+  let nożyce = document.getElementById('nożyce');
+  kamień.addEventListener('click', buttonClicked);
+  papier.addEventListener('click', buttonClicked);
+  nożyce.addEventListener('click', buttonClicked);
+  
+  printMessage('Guzik został kliknięty');
+  
+  
+  
+  function getMoveName(argMoveId){
+    if(argMoveId == 1){
     return 'kamień';
   } else if(argMoveId == 2) {
     return 'papier';
@@ -10,29 +24,23 @@ if(argMoveId == 1){
   return 'nieznany ruch';
 }
 
-
-
 function printMessage(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
-
-
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 let argComputerMove = getMoveName(randomNumber);
 
-
 printMessage('Mój ruch to: ' + argComputerMove);
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+/*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');*/
 
 let argPlayerMove = getMoveName(playerInput);
 
@@ -68,3 +76,5 @@ function displayResult(argComputerMove, argPlayerMove){
 }  else if(argComputerMove == 'nożyce' && argPlayerMove == 'nieznany ruch'){
   printMessage('nie wiem co robić! - wpisz 1, 2 lub 3')
 }
+
+
