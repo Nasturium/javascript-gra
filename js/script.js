@@ -12,10 +12,9 @@ function getMoveName(argMoveId) {
   return "nieznany ruch";
 }
 
-
 function displayResult(argComputerMove, argPlayerMove) {
- 
-  
+ console.log(argComputerMove, argPlayerMove);
+  /*
   if (argComputerMove == "kamień" && argPlayerMove == "papier") {
     printMessage("Ty wygrywasz!");
   } else if (argComputerMove == "kamień" && argPlayerMove == "kamień") {
@@ -40,7 +39,15 @@ function displayResult(argComputerMove, argPlayerMove) {
     printMessage("nie wiem co robić! - wpisz 1, 2 lub 3");
   } else if (argComputerMove == "nożyce" && argPlayerMove == "nieznany ruch") {
     printMessage("nie wiem co robić! - wpisz 1, 2 lub 3");
-  }
+  } */
 
   printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
-}
+} 
+
+const argComputerMove = Math.floor(Math.random() * 3 + 1);
+const computerMovename = getMoveName(argComputerMove)
+
+ const argPlayerMove = prompt("1,2,3")
+ const playerMoveName = getMoveName(argPlayerMove)
+
+ displayResult(computerMovename, argPlayerMove)
